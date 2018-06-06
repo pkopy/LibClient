@@ -47,7 +47,9 @@ public class Main  {
         System.out.println("Podaj tytuł");
         String title = scanner.nextLine();
 
-        restTemplate.getForObject("http://localhost:8080/rest/" + title, String.class);
+
+        Boolean isTitleExist = restTemplate.getForObject("http://localhost:8080/rest/" + title, Boolean.class);
+        System.out.println(isTitleExist);
 //        BookEntity bookEntity = restTemplate.getForObject("http://localhost:8080/rest/" + id, BookEntity.class);
 //        System.out.println(bookEntity.getTitle());
 //        System.out.println(bookEntity.getAuthor());
